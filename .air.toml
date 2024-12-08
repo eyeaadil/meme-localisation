@@ -1,0 +1,99 @@
+# Root directory of the project
+root = "."
+
+# Temporary directories for test data and build artifacts
+testdata_dir = "testdata"
+tmp_dir = "tmp"
+
+[build]
+  # Arguments for the binary (leave empty for most cases)
+  args_bin = []
+
+  # Path to the binary output
+  bin = "./tmp/main"
+
+  # Build command to compile the Go application
+  cmd = "go build -o ./tmp/main ."
+
+  # Delay (in milliseconds) to wait before rebuilding after changes
+  delay = 1000
+
+  # Directories to exclude from watching
+  exclude_dir = ["assets", "tmp", "vendor", "testdata"]
+
+  # Files to exclude (if needed)
+  exclude_file = []
+
+  # Regex to exclude test files
+  exclude_regex = ["_test.go"]
+
+  # Watch for unchanged files (false to speed up)
+  exclude_unchanged = false
+
+  # Whether to follow symlinks in the project
+  follow_symlink = false
+
+  # Full binary path (leave empty unless needed)
+  full_bin = ""
+
+  # Include specific directories (empty means all)
+  include_dir = []
+
+  # Include specific file extensions
+  include_ext = ["go", "html", "css", "js"]
+
+  # Include specific files
+  include_file = []
+
+  # Delay to kill the old binary when rebuilding (0s for instant kill)
+  kill_delay = "0s"
+
+  # Log build errors to this file
+  log = "build-errors.log"
+
+  # Use polling instead of inotify (false for most cases)
+  poll = false
+  poll_interval = 0
+
+  # Commands to run before or after building
+  post_cmd = []
+  pre_cmd = []
+
+  # Rerun the binary even if the build succeeds (set to false)
+  rerun = false
+  rerun_delay = 500
+
+  # Send interrupt to kill process instead of SIGKILL
+  send_interrupt = false
+
+  # Stop rebuilding if the previous build fails
+  stop_on_error = false
+
+[color]
+  # Define colors for output logs
+  app = ""          # Default color for app logs
+  build = "yellow"  # Yellow color for build logs
+  main = "magenta"  # Magenta color for main logs
+  runner = "green"  # Green color for runner logs
+  watcher = "cyan"  # Cyan color for watcher logs
+
+[log]
+  # Log settings
+  main_only = false
+  silent = false
+  time = false
+
+[misc]
+  # Clean up temporary files on exit
+  clean_on_exit = false
+
+[proxy]
+  # Proxy settings (disabled by default)
+  app_port = 0
+  enabled = false
+  proxy_port = 0
+
+[screen]
+  # Screen clearing settings
+  clear_on_rebuild = false
+  keep_scroll = true
